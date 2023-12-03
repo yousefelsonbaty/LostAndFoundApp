@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="991.0" style="-fx-background-color: #FFFFFF;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controllers">
+	<children>
+		<SplitPane dividerPositions="0.19614417435037718" layoutX="61.0" layoutY="139.0" prefHeight="455.0" prefWidth="710.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="139.0">
+			<items>
+      				<AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="96.0" prefHeight="1110.0" prefWidth="224.0">
+               <children>
+                  <ListView fx:id="locationsList" layoutX="-16.0" layoutY="54.0" prefHeight="597.0" prefWidth="191.0" style="-fx-background-color: #1024AD;" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+      				</AnchorPane>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="242.0" prefWidth="589.0" style="-fx-background-color: #FFFFFF;">
+					<children>
+						<SplitPane dividerPositions="0.28212009392821197" layoutX="103.0" layoutY="121.0" orientation="VERTICAL" prefHeight="609.0" prefWidth="795.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+							<items>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="418.0" prefWidth="820.0" style="-fx-background-color: #FFFFFF;">
+									<children>
+										<TableView fx:id="dataTable" layoutX="64.0" layoutY="-6.0" minWidth="-Infinity" prefHeight="173.0" prefWidth="795.0" style="-fx-background-color: #FFFFFF;" stylesheets="@application.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="-6.0">
+											<columns>
+												<TableColumn fx:id="nameCol" prefWidth="126.40000760555267" text="Item Name" />
+												<TableColumn fx:id="dateCol" prefWidth="148.8000259399414" text="Date Lost/Found" />
+												<TableColumn fx:id="locationCol" prefWidth="101.60003662109375" text="Location" />
+												<TableColumn fx:id="statusCol" prefWidth="96.800048828125" text="Status" />
+												<TableColumn fx:id="descriptionCol" prefWidth="318.3999938964844" text="Description" />
+											</columns>
+										</TableView>
+									</children>
+								</AnchorPane>
+								<AnchorPane prefHeight="480.0" prefWidth="835.0">
+                           <children>
+                              <SplitPane dividerPositions="0.5287735849056604" layoutX="285.0" layoutY="234.0" orientation="VERTICAL" prefHeight="552.8" prefWidth="835.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="834.0">
+                                       <children>
+                                          <BarChart fx:id="UIChart" layoutX="60.0" layoutY="-41.0" prefHeight="222.0" prefWidth="793.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis prefHeight="137.0" prefWidth="18.0" side="LEFT" />
+                                            </yAxis>
+                                          </BarChart>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="770.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="11.0" stylesheets="@application.css" text="Item Description:">
+                                             <font>
+                                                <Font name="Arial Black" size="12.0" />
+                                             </font></Label>
+                                          <Text fx:id="txtMessage" layoutX="14.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please refer to the instructions for any assistance." wrappingWidth="265.60004272460924" />
+                                          <VBox layoutX="729.0" layoutY="55.0" spacing="10.0" AnchorPane.bottomAnchor="42.60000000000002" AnchorPane.rightAnchor="14.200000000000045">
+                                             <children>
+                                                <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#EditButtonAction" prefHeight="25.6" prefWidth="54.4" style="-fx-background-color: #DE000A; -fx-font-weight: bold;" stylesheets="@application.css" text="Edit" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font></Button>
+                                                <Button fx:id="btnExport" mnemonicParsing="false" onAction="#ExportButtonAction" prefHeight="25.6" prefWidth="54.4" style="-fx-background-color: #DE000A; -fx-font-weight: bold;" stylesheets="@application.css" text="Export" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#DeleteButtonAction" prefHeight="25.6" prefWidth="54.4" style="-fx-background-color: #DE000A; -fx-font-weight: bold;" stylesheets="@application.css" text="Delete" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font></Button>
+                                                <Button fx:id="btnUndo" mnemonicParsing="false" onAction="#UndoButtonAction" prefHeight="25.6" prefWidth="54.4" style="-fx-background-color: #DE000A; -fx-font-weight: bold;" stylesheets="@application.css" text="Undo" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial" size="12.0" />
+                                                   </font></Button>
+                                             </children>
+                                          </VBox>
+                                          <Hyperlink fx:id="urlAUBH" layoutX="335.0" layoutY="164.0" onAction="#urlAUBHAction" stylesheets="@application.css" text="Made in AUBH (2022)" />
+                                          <TextArea fx:id="txtItem" editable="false" layoutX="14.0" layoutY="29.0" prefHeight="92.0" prefWidth="692.0" promptText="Details about clicked item on the table will be displayed here." stylesheets="@application.css" AnchorPane.bottomAnchor="75.80000000000001" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="87.60000000000002" AnchorPane.topAnchor="29.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+								</AnchorPane>
+							</items>
+						</SplitPane>
+					</children>
+				</AnchorPane>
+			</items>
+			<effect>
+				<ColorAdjust brightness="0.07" contrast="0.04" />
+			</effect>
+		</SplitPane>
+		<MenuBar id="menubar" fx:id="menu" layoutY="1.0" minWidth="-Infinity" prefHeight="8.0" prefWidth="991.0" style="-fx-background-color: #1024AD;" stylesheets="@application.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+			<effect>
+				<ColorAdjust />
+			</effect>
+         <menus>
+            <Menu id="options" mnemonicParsing="false" text="Options">
+              <items>
+                <MenuItem fx:id="helpItem" mnemonicParsing="false" onAction="#HelpAction" style="-fx-text-fill: #FFFFFF;" text="Help" />
+                  <MenuItem fx:id="quitItem" mnemonicParsing="false" onAction="#QuitAction" style="-fx-text-fill: #FFFFFF;" text="Quit" />
+              </items>
+            </Menu>
+         </menus>
+		</MenuBar>
+		<ImageView fitHeight="109.0" fitWidth="130.0" layoutX="20.0" layoutY="29.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="29.0">
+			<image>
+				<Image url="@AUBH%20logo.jpg" />
+			</image>
+		</ImageView>
+		<HBox layoutX="194.0" layoutY="92.0" prefHeight="38.0" prefWidth="692.0" spacing="10.0" AnchorPane.leftAnchor="194.0" AnchorPane.rightAnchor="105.0">
+			<children>
+				<ComboBox fx:id="dropdownLocations" prefHeight="26.0" prefWidth="123.0" promptText="Select Location" stylesheets="@application.css" HBox.hgrow="ALWAYS" />
+				<ComboBox fx:id="dropdownStatus" prefHeight="26.0" prefWidth="146.0" promptText="Select Status" stylesheets="@application.css" HBox.hgrow="ALWAYS" />
+				<TextArea fx:id="txtDescription" prefHeight="38.0" prefWidth="392.0" promptText="Enter Description" stylesheets="@application.css" HBox.hgrow="ALWAYS" />
+			</children>
+		</HBox>
+		<VBox layoutX="648.0" layoutY="55.0" spacing="10.0" AnchorPane.rightAnchor="15.600000000000023" AnchorPane.topAnchor="55.0">
+			<children>
+				<Button fx:id="btnNew" minWidth="-Infinity" mnemonicParsing="false" onAction="#NewButtonAction" prefWidth="46.0" style="-fx-background-color: #DE000A; -fx-font-weight: bold;" stylesheets="@application.css" text="New" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></Button>
+				<Button fx:id="btnSave" minWidth="-Infinity" mnemonicParsing="false" onAction="#SaveButtonAction" prefHeight="26.0" prefWidth="46.0" style="-fx-background-color: #DE000A; -fx-font-weight: bold;" stylesheets="@application.css" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></Button>
+			</children>
+		</VBox>
+      <HBox layoutX="194.0" layoutY="28.0">
+         <children>
+      				<Label prefHeight="18.0" prefWidth="134.0" stylesheets="@application.css" text="Item Name">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Label>
+      				<Label prefHeight="18.0" prefWidth="140.0" stylesheets="@application.css" text="Date Lost/Found">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Label>
+         </children>
+      </HBox>
+		<Text fx:id="txtDateTime" layoutX="512.0" layoutY="41.4755859375" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: italic;" text="Current Date &amp; Time" wrappingWidth="122.39999999999986" AnchorPane.bottomAnchor="674.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="29.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Text>
+		<HBox layoutX="194.0" layoutY="46.0" prefHeight="26.0" prefWidth="277.0" spacing="10.0" AnchorPane.leftAnchor="194.0">
+			<children>
+      				<TextField fx:id="tfItemName" prefHeight="26.0" prefWidth="130.0" promptText="Enter Item" stylesheets="@application.css" HBox.hgrow="ALWAYS" />
+      				<DatePicker fx:id="dateLostFound" onAction="#DateLostFoundAction" prefHeight="26.0" prefWidth="150.0" promptText="Select Date" stylesheets="@application.css" HBox.hgrow="ALWAYS" />
+			</children>
+		</HBox>
+		<HBox layoutX="194.0" layoutY="71.0" prefHeight="23.0" prefWidth="393.0" AnchorPane.bottomAnchor="642.0" AnchorPane.leftAnchor="194.0" AnchorPane.rightAnchor="404.0" AnchorPane.topAnchor="71.0">
+			<children>
+				<Label prefHeight="18.0" prefWidth="134.0" stylesheets="@application.css" text="Location" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Label>
+				<Label prefHeight="18.0" prefWidth="155.0" stylesheets="@application.css" text="Status" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Label>
+				<Label prefHeight="18.0" prefWidth="76.0" stylesheets="@application.css" text="Description" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Label>
+			</children>
+		</HBox>
+      <Text fx:id="apiPlace" layoutX="484.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Weather" wrappingWidth="322.93670654296875">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Text>
+	</children>
+</AnchorPane>
