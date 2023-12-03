@@ -5,7 +5,7 @@
 This project was implemented by a group of three students for a Windows Programming (CMPE 361) course at the American University of Bahrain (AUBH) during December 2022.
 JavaFX, Eclipse & SceneBuilder were used for the project's implementation.
 
-Contents talked about in this file:
+# Contents talked about in this file:
 - Description
 - Features
 - Installation
