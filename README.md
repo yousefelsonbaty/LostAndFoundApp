@@ -43,7 +43,7 @@ A JavaFX application that tracks lost and found items at AUBH when the user is a
 - The current temperature in Bahrain is displayed.
 
 ## Credits
-American University of Bahrain (AUBH)
-CMPE 361 - Windows Programming
-Professor: Dr. Fatema Akbar
-Students: Yousef Elsonbaty (A00138), Mariam Hussein (A00039) & Amr Osman (A00112)
+- American University of Bahrain (AUBH)
+- CMPE 361 - Windows Programming
+- Professor: Dr. Fatema Akbar
+- Students: Yousef Elsonbaty (A00138), Mariam Hussein (A00039) & Amr Osman (A00112)
