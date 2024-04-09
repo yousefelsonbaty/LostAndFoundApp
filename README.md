@@ -41,7 +41,6 @@ A JavaFX application that tracks lost and found items at AUBH when the user can 
 ## Additional Features
 - Users can select multiple items and click on 'Delete' to delete the selected items and click on 'Undo' to undo the deletion process.
 - The current temperature in Bahrain is displayed.
-
 ## Credits
 - American University of Bahrain (AUBH)
 - CMPE 361 - Windows Programming
